@@ -26,7 +26,20 @@ const arrSpecial = ["!","\"","#","$","%","&","'","(",")","*","+","-","/","\\",":
 // Create function 'generatePassword();' to run when button clicked.
 function generatePassword() {
 
+  // PASSWORD LENGTH:
+  // Prompt for password length.
+      // CODE HERE
+  
+  // Check if password length is between 8-128 characters, and return alert message to redo if not.
+      // CODE HERE
 
+  // CHARACTER TYPES:
+  // Set up character type confirmations if password length is OK.
+      // CODE HERE 
 
+  // PASSWORD RESULTS SCENARIOS:
+  // Set up password results scenarios based on character type responses.
+      // CODE HERE
+  
 
 }
