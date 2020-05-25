@@ -15,6 +15,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 // **GLOBAL VARIABLES** //
+
 // Setting a placeholder for the final function result
 let pwResult = "";
 // Setting up arrays for character type selection: Letters
@@ -23,12 +24,20 @@ const arrLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
 const arrSpecial = ["!","\"","#","$","%","&","'","(",")","*","+","-","/","\\",":",";",">","<","=","?","@","[","]","^","_","{","}","|","~"];
 
 // ** PASSWORD GENERATION FUNCTION ** //
+
 // Create function 'generatePassword();' to run when button clicked.
 function generatePassword() {
 
-  // PASSWORD LENGTH:
-  // Prompt for password length.
-      // CODE HERE
+  // *** PASSWORD LENGTH: **** //
+  
+  // Set a variable and assign it to the user-defined password length from prompt.
+  const pwLength = prompt("Set your Password Length between 8 and 128 characters.")
+  
+  // Since prompts auto-convert entry to strings, convert the length to a number.
+  parseInt(pwLength);
+
+  // Log the entered length to console for checking/error-handling.
+  console.log("Length: " + pwLength);
   
   // Check if password length is between 8-128 characters, and return alert message to redo if not.
       // CODE HERE
