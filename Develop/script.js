@@ -16,19 +16,17 @@ generateBtn.addEventListener("click", writePassword);
 
 // **GLOBAL VARIABLES** //
 
-// Setting a placeholder for the final function result
-let pwResult = "";
-// Setting up arrays for character type selection: Letters
-const arrLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-// Setting up arrays for character type selection: Special Characters
-const arrSpecial = ["!","\"","#","$","%","&","'","(",")","*","+","-","/","\\",":",";",">","<","=","?","@","[","]","^","_","{","}","|","~"];
+let pwResult = "";  // Setting a placeholder for the final function result
+const arrLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];  // Setting up arrays for character type selection: Letters
+const arrSpecial = ["!","\"","#","$","%","&","'","(",")","*","+","-","/","\\",":",";",">","<","=","?","@","[","]","^","_","{","}","|","~"];  // Setting up arrays for character type selection: Special Characters
 
 // ** PASSWORD GENERATION FUNCTION ** //
 
 // Create function 'generatePassword();' to run when button clicked.
 function generatePassword() {
-
+  
   // ** PASSWORD LENGTH: ** //
+  
   const pwLength = prompt("Set your Password Length between 8 and 128 characters."); // Set a variable to the user-defined password length from prompt.
   parseInt(pwLength); // Since prompts auto-convert to string, converts length to a #.
   console.log("Length: " + pwLength); // Logs length to console for checking/errors
@@ -43,9 +41,25 @@ function generatePassword() {
   } else { // Length is OK. Allows the function to continue...
 
     // ** CHARACTER TYPES SELECTION ** //
+    
+    // Lowercase letters character type:
+    const pwLower = confirm("Use lowercase letters in the password? Select \"OK\" to use lowercase letters. Select \"Cancel\" to continue."); // Set a variable for lowercase letters to a confirm() message Boolean result
+    console.log(""); // Add a space in the console output between length and confirm result
+    console.log("Lowercase: " + pwLower); // Logs Lowercase? T/F confirm result to console for checking/errors
+    
+    // Uppercase letters character type:
+    const pwUpper = confirm("Use UPPERCASE letters in the password? Select \"OK\" to use UPPERCASE letters. Select \"Cancel\" to continue."); // Set a variable for uppercase letters to a confirm() message Boolean result
+    console.log("Uppercase: " + pwUpper); // Logs Uppercase? T/F confirm result to console for checking/errors
+    
+    // Numbers character type:
+    const pwNum = confirm("Use numbers (e.g. 0, 2, 7, etc.) in the password? Select \"OK\" to use numbers. Select \"Cancel\" to continue."); // Set a variable for numbers to a confirm() message Boolean result
+    console.log("Number: " + pwNum); // Logs Number? T/F confirm result to console for checking/errors 
 
+    // Special Characters character type:
+    const pwSpecial = confirm("Use special characters (e.g. @, ^, $, etc.) in the password? Select \"OK\" to use special characters. Select \"Cancel\" to continue."); // Set a variable for special chars to a confirm() message Boolean result
+    console.log("Number: " + pwNum); // Logs Number? T/F confirm result to console for checking/errors 
 
-
+    // ** PASSWORD SELECTION SCENARIOS ** //
 
 
 
