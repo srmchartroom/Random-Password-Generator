@@ -60,18 +60,6 @@ function generatePassword() {
     console.log("Number: " + pwNum); // Logs Number? T/F confirm result to console for checking/errors 
 
     // ** PASSWORD SELECTION SCENARIOS ** //
-
-
-
-  }
-
-  // CHARACTER TYPES:
-  // Set up character type confirmations if password length is OK.
-      // CODE HERE 
-
-  // PASSWORD RESULTS SCENARIOS:
-  // Set up password results scenarios based on character type responses.
-      // CODE HERE
   
 
 }
