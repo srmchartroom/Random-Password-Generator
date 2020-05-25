@@ -21,3 +21,12 @@ let pwResult = "";
 const arrLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 // Setting up arrays for character type selection: Special Characters
 const arrSpecial = ["!","\"","#","$","%","&","'","(",")","*","+","-","/","\\",":",";",">","<","=","?","@","[","]","^","_","{","}","|","~"];
+
+// ** PASSWORD GENERATION FUNCTION ** //
+// Create function 'generatePassword();' to run when button clicked.
+function generatePassword() {
+
+
+
+
+}
