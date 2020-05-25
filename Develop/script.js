@@ -12,3 +12,12 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+// **GLOBAL VARIABLES** //
+// Setting a placeholder for the final function result
+let pwResult = "";
+// Setting up arrays for character type selection: Letters
+const arrLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+// Setting up arrays for character type selection: Special Characters
+const arrSpecial = ["!","\"","#","$","%","&","'","(",")","*","+","-","/","\\",":",";",">","<","=","?","@","[","]","^","_","{","}","|","~"];
