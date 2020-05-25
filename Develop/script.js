@@ -40,10 +40,13 @@ function generatePassword() {
   console.log("Length: " + pwLength);
   
   // Check if 8 >= pwLength >= 128. Return alert message to redo if not.
-  if (pwLength < 8 || pwLegth > 128) {
+  if (pwLength < 8) {
     alert("Password does not meet the length criteria. Please select the \"Generate Password\" button to try again.");
-    return "Please try again."
-  }
+    return "Please try again.";
+  } else if (pwLength > 128) {
+    alert("Password does not meet the length criteria. Please select the \"Generate Password\" button to try again.");
+    return "Please try again.";
+  } else {}
 
   // CHARACTER TYPES:
   // Set up character type confirmations if password length is OK.
