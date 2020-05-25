@@ -39,8 +39,11 @@ function generatePassword() {
   // Log the entered length to console for checking/error-handling.
   console.log("Length: " + pwLength);
   
-  // Check if password length is between 8-128 characters, and return alert message to redo if not.
-      // CODE HERE
+  // Check if 8 >= pwLength >= 128. Return alert message to redo if not.
+  if (pwLength < 8 || pwLegth > 128) {
+    alert("Password does not meet the length criteria. Please select the \"Generate Password\" button to try again.");
+    return "Please try again."
+  }
 
   // CHARACTER TYPES:
   // Set up character type confirmations if password length is OK.
