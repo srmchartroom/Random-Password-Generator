@@ -25,11 +25,8 @@ function generatePassword() {   // Create function 'generatePassword();' to run 
   const pwLength = prompt("Set your Password Length between 8 and 128 characters.");  // Set a var to entered password length from prompt
   parseInt(pwLength);   // Convert length to a # since prompt() converts entries to string type
   console.log("Length: " + pwLength);
-  if (pwLength < 8) {   // Check for length value < 8...
-    alert("Password does not meet the length criteria. Please select the \"Generate Password\" button to try again.");  // Return an error alert message if < 8
-    return "Please try again.";   // Display try-again message in the password textarea of writePassword() function
-  } else if (pwLength > 128) {    // Checking for length value > 128...
-    alert("Password does not meet the length criteria. Please select the \"Generate Password\" button to try again.");    // Show the use an error alert.
+  if (pwLength < 8 || pwLength > 128) {   // Check for length value < 8 or > 128...
+    alert("Password does not meet the length criteria. Please select the \"Generate Password\" button to try again.");  // Return an error alert message
     return "Please try again.";   // Display try-again message in the password textarea of writePassword() function
   } else {  // if length ok, run rest of function
   
