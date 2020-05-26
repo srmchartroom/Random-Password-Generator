@@ -60,6 +60,26 @@ function generatePassword() {
     console.log("Number: " + pwNum); // Logs Number? T/F confirm result to console for checking/errors 
 
     // ** PASSWORD SELECTION SCENARIOS ** //
-  
+    
+      /* Password Selection Logic: 
+      Scenario 1: pwLower: T, pwUpper: T, pwNum: T, pwSpecial: T
+      Scenario 2: pwLower: T, pwUpper: T, pwNum: F, pwSpecial: F
+      Scenario 3: pwLower: T, pwUpper: T, pwNum: F, pwSpecial: T
+      Scenario 4: pwLower: T, pwUpper: T, pwNum: T, pwSpecial: F
+      Scenario 5: pwLower: T, pwUpper: F, pwNum: T, pwSpecial: T
+      Scenario 6: pwLower: T, pwUpper: F, pwNum: F, pwSpecial: F
+      Scenario 7: pwLower: T, pwUpper: F, pwNum: F, pwSpecial: T
+      Scenario 8: pwLower: T, pwUpper: F, pwNum: T, pwSpecial: F
+      Scenario 9: pwLower: F, pwUpper: T, pwNum: T, pwSpecial: T
+      Scenario 10: pwLower: F, pwUpper: T, pwNum: F, pwSpecial: F
+      Scenario 11: pwLower: F, pwUpper: T, pwNum: F, pwSpecial: T
+      Scenario 12: pwLower: F, pwUpper: T, pwNum: T, pwSpecial: F
+      Scenario 13: pwLower: F, pwUpper: F, pwNum: T, pwSpecial: T
+      Scenario 14: pwLower: F, pwUpper: F, pwNum: T, pwSpecial: F
+      Scenario 15: pwLower: F, pwUpper: F, pwNum: F, pwSpecial: T
+        // Error Handle Scenario 16: Must select 1 character type //
+      Scenario 16: pwLower: F, pwUpper: F, pwNum: F, pwSpecial: F  */ 
 
-}
+    
+
+    }
