@@ -316,7 +316,27 @@ function generatePassword() {
       return pwResult;
     } // end of scenario 12
     // Scenario 13: L=F, U=F, N=T, $=T
+    else if (pwLower !== true && pwUpper !== true && pwNum == true && pwSpecial == true) {
+      console.log("Scenario 13: Numbers and Special Characters - BUT NO LOWERCASE LETTERS, NO UPPERCASE LETTERS");
+      let pwArray = [0];
+      for(var i = 0; i < pwLength; i++) {
+        let typeIndex = Math.floor(Math.random() * 2);
+        if (typeIndex == 0) {
+          let iN = [Math.floor(Math.random() * 10)];
+          pwArray[i] = iN;
+        } else { 
+          let iS = arrSpecial[Math.floor(Math.random() * 29)];
+          pwArray[i] = iS;
+        }
+        console.log("Character " + (i+1) + ": " + pwArray[i]);
+      }
+      pwResult = pwArray.join("");
+      console.log("Final Password: " + pwResult);
+      return pwResult;
+    } // end of scenario 13
+    // Scenario 14: L=F, U=F, N=T, $=F
     
+
 
 
 
