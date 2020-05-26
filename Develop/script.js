@@ -335,7 +335,34 @@ function generatePassword() {
       return pwResult;
     } // end of scenario 13
     // Scenario 14: L=F, U=F, N=T, $=F
-    
+    else if (pwLower !== true && pwUpper !== true && pwNum == true && pwSpecial !== true) {
+      console.log("Scenario 14: Numbers only - NO LOWERCASE, NO UPPERCASE, NO SPECIAL CHARACTERS");
+      let pwArray = [0];
+      for(var i = 0; i < pwLength; i++) { 
+        let iN = [Math.floor(Math.random() * 10)];
+        pwArray[i] = iN;
+        console.log("Character " + (i+1) + ": " + pwArray[i]);
+      }
+      pwResult = pwArray.join("");
+      console.log("Final Password: " + pwResult);
+      return pwResult;
+    } // end of scenario 14
+    // Scenario 15: L=F, U=F, N=F, $=T
+    else if (pwLower !== true && pwUpper !== true && pwNum !== true && pwSpecial == true) {
+      console.log("Scenario 15: Special Characters only - NO LOWERCASE, NO UPPERCASE, NO NUMBERS");
+      let pwArray = [0]; 
+      for(var i = 0; i < pwLength; i++) {
+        let iS = arrSpecial[Math.floor(Math.random() * 29)];
+        pwArray[i] = iS;
+        console.log("Character " + (i+1) + ": " + pwArray[i]);
+      }
+      pwResult = pwArray.join("");
+      console.log("Final Password: " + pwResult);
+      return pwResult;
+    } // end of scenario 15
+    // Scenario 16: L=F, U=F, N=F, $=F (error scenario; alert an error and to try again)
+
+
 
 
 
