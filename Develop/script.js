@@ -265,7 +265,38 @@ function generatePassword() {
       return pwResult;
     } // end of scenario 9
     // Scenario 10: L=F, U=T, N=F, $=F
-
+    else if (pwLower !== true && pwUpper == true && pwNum !== true && pwSpecial !== true) {
+      console.log("Special 10: Uppercase only - NO LOWERCASE, NO NUMBERS, NO SPECIAL CHARACTERS");
+      let pwArray = [0];
+      for(var i = 0; i < pwLength; i++) {
+        let iU = arrLetters[Math.floor(Math.random() * 26)].toUpperCase();
+        pwArray[i] = iU;
+        console.log("Character " + (i+1) + ": " + pwArray[i]);
+      }
+      pwResult = pwArray.join("");
+      console.log("Final Password: " + pwResult);
+      return pwResult;
+    } // end of scenario 10
+    // Scenario 11: L=F, U=T, N=F, $=T
+    else if (pwLower !== true && pwUpper == true && pwNum !== true && pwSpecial == true) {
+      console.log("Case 11: Uppercase and Special Characters - NO LOWERCASE, NO NUMBERS");
+      let pwArray = [0];
+      for(var i = 0; i < pwLength; i++) {
+        let typeIndex = Math.floor(Math.random() * 2);
+        if (typeIndex == 0) {
+          let iU = arrLetters[Math.floor(Math.random() * 26)].toUpperCase();
+          pwArray[i] = iU;
+        } else { 
+          let iS = arrSpecial[Math.floor(Math.random() * 29)];
+          pwArray[i] = iS;
+        }
+        console.log("Character " + (i+1) + ": " + pwArray[i]);
+      }
+      pwResult = pwArray.join("");
+      console.log("Final Password: " + pwResult);
+      return pwResult;
+    } //end of scenario 11
+    // Scenario 12: L=F, U=T, N=T, $=F
 
 
 
