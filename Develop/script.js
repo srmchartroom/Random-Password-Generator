@@ -52,7 +52,7 @@ function generatePassword() {   // Create function 'generatePassword();' to run 
     console.log("Number: " + pwNum);    // Logs Number? T/F confirm result to console for checking/errors 
   
     // ** PASSWORD SELECTION SCENARIOS ** //
-    
+
     /* Password Selection Logic: (for the below, lowercase == "L", uppercase == "U", numbers == "N", special characters == "$")
       SCENARIO 1: L, U, N, $ | SCENARIO 2: L, U, (not N, not $) | SCENARIO 3: L, U, $ (not N) | SCENARIO 4: L, U, N (not $) | SCENARIO 5: L, N, $ (not U) | SCENARIO 6: L (not U, not N, not $) | SCENARIO 7: L, $, (not U, not N) | SCENARIO 8: L, N, (not U, not $) | SCENARIO 9: U, N, $ (not L) | SCENARIO 10: U (not L, not N, not $) | SCENARIO 11: U, $, (not L, not N) | SCENARIO 12: U, N, (not L, not $) | SCENARIO 13: N, $, (not L, not U) | SCENARIO 14: N (not L, not U, not $) | SCENARIO 15: $ (not L, not U, not N) | SCENARIO 16: None */ 
 
@@ -64,7 +64,7 @@ function generatePassword() {   // Create function 'generatePassword();' to run 
         let typeIndex = Math.floor(Math.random() * 4);   // Set a var & assign it to a random number 0-3, where 0 = lower, 1 = Upper, 2 = number, 3 = special char.
         console.log("Random type selected: " + typeIndex);    // Log typeIndex randomly generated to console for checking/errors
         if (typeIndex == 0) {   // Set conditional: if character type randomly selected is lowercase letters...
-          let iL = arrLetters[Math.floor(math.random() * 26)];    // Set a var to be whatever letter in the arrLetters array is at an index position that's randomly generated
+          let iL = arrLetters[Math.floor(Math.random() * 26)];    // Set a var to be whatever letter in the arrLetters array is at an index position that's randomly generated
           pwArry[i] = iL;   // Assign current index position in the password array to the randomly generated and assigned lowercase letter.
         } else if (typeIndex == 1) {    // Set conditional: else if character type randomly selected is uppercase letters...
           let iU = arrLetters[Math.floor(Math.random() * 26)].toUpperCase();    // Set a var to be whatever letter in the arrLetters array is at an index position that's randomly generated (and then capitalize it)
