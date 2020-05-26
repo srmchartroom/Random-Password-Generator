@@ -49,7 +49,7 @@ function generatePassword() {   // Create function 'generatePassword();' to run 
   
     // Special Characters character type:
     const pwSpecial = confirm("Use special characters (e.g. @, ^, $, etc.) in the password? Select \"OK\" to use special characters. Select \"Cancel\" to continue.");    // Set a variable for special chars to a confirm() message Boolean result
-    console.log("Number: " + pwNum);    // Logs Number? T/F confirm result to console for checking/errors 
+    console.log("Number: " + pwSpecial);    // Logs Number? T/F confirm result to console for checking/errors 
   
     // ** PASSWORD SELECTION SCENARIOS ** //
 
@@ -58,30 +58,30 @@ function generatePassword() {   // Create function 'generatePassword();' to run 
 
     // SCENARIO 1: L=T, U=T, N=T, $=T
     if (pwLower == true && pwUpper == true && pwNum == true && pwSpecial == true) {
-      console.log("SCENARIO 1: lowercase, uppercase, numbers, & special characters");     // Log in the console that console logs after this point are related to scenario 1
-      let pwArray = [0];    // Set empty array to hold the random characters as they're generated
-      for(var i = 0; i < pwLength; i++) {   // Set for loop to iterate and create random characters until desired pw length is met
-        let typeIndex = Math.floor(Math.random() * 4);   // Set a var & assign it to a random number 0-3, where 0 = lower, 1 = Upper, 2 = number, 3 = special char.
-        console.log("Random type selected: " + typeIndex);    // Log typeIndex randomly generated to console for checking/errors
-        if (typeIndex == 0) {   // Set conditional: if character type randomly selected is lowercase letters...
-          let iL = arrLetters[Math.floor(Math.random() * 26)];    // Set a var to be whatever letter in the arrLetters array is at an index position that's randomly generated
-          pwArry[i] = iL;   // Assign current index position in the password array to the randomly generated and assigned lowercase letter.
-        } else if (typeIndex == 1) {    // Set conditional: else if character type randomly selected is uppercase letters...
-          let iU = arrLetters[Math.floor(Math.random() * 26)].toUpperCase();    // Set a var to be whatever letter in the arrLetters array is at an index position that's randomly generated (and then capitalize it)
-          pwArry[i] = iU;   // Assign current index position in the pw array to the randomly generated (and capitalized)and assigned uppercase letter          
-        } else if (typeIndex == 2) {    // Set conditional: else if character type randomly selected is numbers...
-          let iN = [Math.floor(Math.random() * 10)];    // Set a var to be a randomly generated number between 0 and 9.
-          pwArray[i] = iN;    // Assign current index position in the pw array to the randomly generated number.
-        } else {    // Final else conditional: if character type randomly selected is not the others (0-2) - and instead is 3 for special characters...
-          let iS = arrSpecial[Math.floor(Math.random() * 29)];    // Set a var to be whatever special character in the arrSpecial array is at the index position that's randomly generated
-          pwArray[i] = iS;  // Assign current index position in the pw array to the randomly generation and assigned special character
+      console.log("Case 1: Lowercase, Uppercase, Numbers, & Special Characters.");
+      let pwArray = [0];  // Set empty array to hold random generated characters
+      for(var i = 0; i < pwLength; i++) {  // Set for loop to iterate until pw length is met
+        let typeIndex = Math.floor(Math.random() * 4);  // Set a var & assign to random number 0-3 (0 = lower, 1 = Upper, 2 = number, 3 = special char)
+        console.log("Type Index Randomly Selected: " + typeIndex);
+        if (typeIndex == 0) {  // Set conditional if character type randomly selected is lowercase letters...
+          let iL = arrLetters[Math.floor(Math.random() * 26)];  // Set var for letter in the arrLetters array at randomly generated index position
+          pwArray[i] = iL;  // Assign current index position in password array to the randomly generated letter
+        } else if (typeIndex == 1) {  // Set conditional else if character type randomly selected is uppercase letters...
+          let iU = arrLetters[Math.floor(Math.random() * 26)].toUpperCase();  // Set a var for letter in the arrLetters array at randomly generated index position and capitalize the letter
+          pwArray[i] = iU;  // Assign current index position in password array to the randomly generated (and capitalized) letter
+        } else if (typeIndex == 2) {  // Set conditional else if character type randomly selected is numbers...
+          let iN = [Math.floor(Math.random() * 10)];  // Set var for a randomly generated number, 0-9
+          pwArray[i] = iN;  // Assign current index position in the password array to randomly generated number
+        } else {  // Final else conditional for if character type randomly selected is not the others (0-2); instead is 3 for special characters...
+          let iS = arrSpecial[Math.floor(Math.random() * 29)];  // Set var for special character in the arrSpecial array at randomly generated index position
+          pwArray[i] = iS;  // Assign current index position in the password array to randomly generated special character
         }
-        console.log("Character " + (i+1) + ": " + pwArray[i]);    // Log the selected character to the console (logged with each iteration of the for.. loop)
+        console.log("Character " + (i+1) + ": " + pwArray[i]);
       }
-      pwResult = pwArray.join("");     // After the for... loop is finished, set the original pwResult variable to be the all the characters in the pw array joined with no separation character (so 1 continuous string)
-      console.log("Final Password: " + pwResult);     // log the final password generated to the console
-      return pwResult;    // Return the final password result from the function to be assigned as the "password" variable in the writePassword() function
-    } // end of SCENARIO 1
+      pwResult = pwArray.join("");  // After for loop finishes, set original pwResult var to  the generated characters in the pwArray (joined as single string, no separation character)
+      console.log("Final Password: " + pwResult);
+      return pwResult;  // Return final password result to be used in writePassword() function
+    }  // end of SCENARIO 1 
 
     // SCENARIO 2: L=T, U=T, N=F, $=F
     else if (pwLower == true && pwUpper == true && pwNum !== true && pwSpecial !== true) {
