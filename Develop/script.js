@@ -244,7 +244,7 @@ function generatePassword() {
     } // end of scenario 8
     // Scenario 9: L=F, U=T, N=T, $=T
     else if (pwLower !== true && pwUpper == true && pwNum == true && pwSpecial == true) {
-      console.log("Case 9: Uppercase, Numbers, and Special Characters - BUT NO LOWERCASE LETTERS");
+      console.log("Scenario 9: Uppercase, Numbers, and Special Characters - BUT NO LOWERCASE LETTERS");
       let pwArray = [0];
       for(var i = 0; i < pwLength; i++) {
         let typeIndex = Math.floor(Math.random() * 3);
@@ -266,7 +266,7 @@ function generatePassword() {
     } // end of scenario 9
     // Scenario 10: L=F, U=T, N=F, $=F
     else if (pwLower !== true && pwUpper == true && pwNum !== true && pwSpecial !== true) {
-      console.log("Special 10: Uppercase only - NO LOWERCASE, NO NUMBERS, NO SPECIAL CHARACTERS");
+      console.log("Scenario 10: Uppercase only - NO LOWERCASE, NO NUMBERS, NO SPECIAL CHARACTERS");
       let pwArray = [0];
       for(var i = 0; i < pwLength; i++) {
         let iU = arrLetters[Math.floor(Math.random() * 26)].toUpperCase();
@@ -279,7 +279,7 @@ function generatePassword() {
     } // end of scenario 10
     // Scenario 11: L=F, U=T, N=F, $=T
     else if (pwLower !== true && pwUpper == true && pwNum !== true && pwSpecial == true) {
-      console.log("Case 11: Uppercase and Special Characters - NO LOWERCASE, NO NUMBERS");
+      console.log("Scenario 11: Uppercase and Special Characters - NO LOWERCASE, NO NUMBERS");
       let pwArray = [0];
       for(var i = 0; i < pwLength; i++) {
         let typeIndex = Math.floor(Math.random() * 2);
@@ -297,7 +297,26 @@ function generatePassword() {
       return pwResult;
     } //end of scenario 11
     // Scenario 12: L=F, U=T, N=T, $=F
-
+    else if (pwLower !== true && pwUpper == true && pwNum == true && pwSpecial !== true) {
+      console.log("Scenario 12: Uppercase and Numbers - NO LOWERCASE, NO SPECIAL CHARACTERS");
+      let pwArray = [0];
+      for(var i = 0; i < pwLength; i++) {
+        let typeIndex = Math.floor(Math.random() * 2);
+        if (typeIndex == 0) {
+          let iU = arrLetters[Math.floor(Math.random() * 26)].toUpperCase();
+          pwArray[i] = iU;
+        } else { 
+          let iN = [Math.floor(Math.random() * 10)];
+          pwArray[i] = iN;
+        }
+        console.log("Character " + (i+1) + ": " + pwArray[i]);
+      }
+      pwResult = pwArray.join("");
+      console.log("Final Password: " + pwResult);
+      return pwResult;
+    } // end of scenario 12
+    // Scenario 13: L=F, U=F, N=T, $=T
+    
 
 
 
