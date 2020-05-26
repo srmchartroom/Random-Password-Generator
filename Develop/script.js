@@ -108,7 +108,7 @@ function generatePassword() {
     } // end of scenario 1
     // Scenario 2: L=T, U=T, N=F, $=F
     else if (pwLower == true && pwUpper == true && pwNum !== true && pwSpecial !== true) {
-      console.log("Scenario 1: lowercase, uppercase, NO numbers, NO special characters");
+      console.log("Scenario 2: lowercase, uppercase, NO numbers, NO special characters");
       let pwArray = [0];
       for(var i = 0; i < pwLength; i++) {
         let typeIndex = Math.floor(Math.random() * 2);
@@ -127,7 +127,7 @@ function generatePassword() {
     } // end of scenario 2
     // Scenario 3: L=T, U=T, N=F, $=T
     else if (pwLower == true && pwUpper == true && pwNum !== true && pwSpecial == true) {
-      console.log("Case 3: Lowercase, Uppercase, Special Characters - BUT NO NUMBERS");
+      console.log("Scenario 3: Lowercase, Uppercase, Special Characters - BUT NO NUMBERS");
       let pwArray = [0];
       for(var i = 0; i < pwLength; i++) {
         let typeIndex = Math.floor(Math.random() * 3);
@@ -147,7 +147,29 @@ function generatePassword() {
       console.log("Final Password: " + pwResult);
       return pwResult;
     } // end of scenario 3
-     
+    // Scenario 4: L=T, U=T, N=T, $=F
+    else if (pwLower == true && pwUpper == true && pwNum == true && pwSpecial !== true) {
+      console.log("Scenario 4: Lowercase, Uppercase, Numbers - BUT NO SPECIAL CHARACTERS");
+      let pwArray = [0];
+      for(var i = 0; i < pwLength; i++) {
+        let typeIndex = Math.floor(Math.random() * 3);
+        if (typeIndex == 0) {
+          let iL = arrLetters[Math.floor(Math.random() * 26)];
+          pwArray[i] = iL;
+        } else if (typeIndex == 1) {
+          let iU = arrLetters[Math.floor(Math.random() * 26)].toUpperCase();
+          pwArray[i] = iU;
+        } else {
+          let iN = [Math.floor(Math.random() * 10)];
+          pwArray[i] = iN;
+        }
+        console.log("Character " + (i+1) + ": " + pwArray[i]);
+      }
+      pwResult = pwArray.join("");
+      console.log("Final Password: " + pwResult);
+      return pwResult;
+    } // end of scenario 4  
+    // Scenario 5: L=T, U=F, N=T, $=T
 
   } // end of else     
 
