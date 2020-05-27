@@ -14,46 +14,88 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-// **GLOBAL VARIABLES** 
-let pwResult = "";    // Setting a placeholder for the final function result
-const arrLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];   // Setting up arrays for character type selection: Letters
-const arrSpecial = ["!","\"","#","$","%","&","'","(",")","*","+","-","/","\\",":",";",">","<","=","?","@","[","]","^","_","{","}","|","~"];   // Setting up arrays for character type selection: Special Characters
+// **GLOBAL VARIABLES** //
 
-// ** PASSWORD GENERATION FUNCTION **
+// Placeholder for the final function result
+let pwResult = "";
+// Array for selecting random letters    
+const arrLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+// Array for selecting random special characters
+const arrSpecial = ["!","\"","#","$","%","&","'","(",")","*","+","-","/","\\",":",";",">","<","=","?","@","[","]","^","_","{","}","|","~"];   
+
+
+
+// ** PASSWORD GENERATION FUNCTION ** //
+
 function generatePassword() {   // Create function 'generatePassword();' to run when button clicked
-  // ** PASSWORD LENGTH: **
-  const pwLength = prompt("Set your Password Length between 8 and 128 characters.");  // Set a var to entered password length from prompt
-  parseInt(pwLength);   // Convert length to a # since prompt() converts entries to string type
-  console.log("Length: " + pwLength);
-  if (pwLength < 8 || pwLength > 128) {   // Check for length value < 8 or > 128...
-    alert("Password does not meet the length criteria. Please select the \"Generate Password\" button to try again.");  // Return an error alert message
-    return "Please try again.";   // Display try-again message in the password textarea of writePassword() function
-  } else {  // if length ok, run rest of function
   
-    // ** CHARACTER TYPES SELECTION **
-  // Lowercase letters character type:
-    const pwLower = confirm("Use lowercase letters in the password? Select \"OK\" to use lowercase letters. Select \"Cancel\" to continue.");   // Set var to confirm() Boolean for lowercase
+  // ** PASSWORD LENGTH: ** //
+  
+  // Set a var called pwLength to the entered password length from browser prompt
+  const pwLength = prompt("Set your Password Length between 8 and 128 characters.");
+  // Convert length to a # (since prompt() converts entries to string type)
+  parseInt(pwLength);
+  console.log("Length: " + pwLength);
+  
+  // Check for length value < 8 or > 128...
+  if (pwLength < 8 || pwLength > 128) {   
+    // Return an error alert message if length if true (length is < 8 or > 128)
+    alert("Password does not meet the length criteria. Please select the \"Generate Password\" button to try again.");  
+    // Display try-again message in the password textarea of writePassword() function
+    return "Please try again.";   
+  } 
+  // if length ok, run rest of function
+  else {  
+  
+  // ** CHARACTER TYPES SELECTION ** //
+
+    /* ---LOWERCASE LETTERS CHARACTER TYPE--- */
+    // Set var and assign the confirm() Boolean for lowercase letters
+    const pwLower = confirm("Use lowercase letters in the password? Select \"OK\" to use lowercase letters. Select \"Cancel\" to continue.");   
     console.log(""); 
     console.log("Lowercase: " + pwLower);    
   
-    // Uppercase letters character type:
-    const pwUpper = confirm("Use UPPERCASE letters in the password? Select \"OK\" to use UPPERCASE letters. Select \"Cancel\" to continue.");   // Set a variable for uppercase letters to a confirm() message Boolean result
-    console.log("Uppercase: " + pwUpper);   // Logs Uppercase? T/F confirm result to console for checking/errors  
+    /* ---UPPERCASE LETTERS CHARACTER TYPE--- */
+    // Set a var and assign the confirm() Boolean for uppercase letters
+    const pwUpper = confirm("Use UPPERCASE letters in the password? Select \"OK\" to use UPPERCASE letters. Select \"Cancel\" to continue.");
+    console.log("Uppercase: " + pwUpper);   
   
-    // Numbers character type:
-    const pwNum = confirm("Use numbers (e.g. 0, 2, 7, etc.) in the password? Select \"OK\" to use numbers. Select \"Cancel\" to continue.");    // Set a variable for numbers to a confirm() message Boolean result
-    console.log("Number: " + pwNum);    // Logs Number? T/F confirm result to console for checking/errors 
-  
-    // Special Characters character type:
-    const pwSpecial = confirm("Use special characters (e.g. @, ^, $, etc.) in the password? Select \"OK\" to use special characters. Select \"Cancel\" to continue.");    // Set a variable for special chars to a confirm() message Boolean result
-    console.log("Number: " + pwSpecial);    // Logs Number? T/F confirm result to console for checking/errors 
-  
-    // ** PASSWORD SELECTION SCENARIOS ** //
+    /* ---NUMBERS CHARACTER TYPE--- */
+    // Set a var and assign the confirm() Boolean for numbers
+    const pwNum = confirm("Use numbers (e.g. 0, 2, 7, etc.) in the password? Select \"OK\" to use numbers. Select \"Cancel\" to continue.");    
+    console.log("Number: " + pwNum);    
+     
+    /* ---SPECIAL CHARACTERS CHARACTER TYPE--- */
+    // Set a var and assign the confirm() Boolean for special characters
+    const pwSpecial = confirm("Use special characters (e.g. @, ^, $, etc.) in the password? Select \"OK\" to use special characters. Select \"Cancel\" to continue.");
+    console.log("Number: " + pwSpecial);    
 
-    /* Password Selection Logic: (for the below, lowercase == "L", uppercase == "U", numbers == "N", special characters == "$")
-      SCENARIO 1: L, U, N, $ | SCENARIO 2: L, U, (not N, not $) | SCENARIO 3: L, U, $ (not N) | SCENARIO 4: L, U, N (not $) | SCENARIO 5: L, N, $ (not U) | SCENARIO 6: L (not U, not N, not $) | SCENARIO 7: L, $, (not U, not N) | SCENARIO 8: L, N, (not U, not $) | SCENARIO 9: U, N, $ (not L) | SCENARIO 10: U (not L, not N, not $) | SCENARIO 11: U, $, (not L, not N) | SCENARIO 12: U, N, (not L, not $) | SCENARIO 13: N, $, (not L, not U) | SCENARIO 14: N (not L, not U, not $) | SCENARIO 15: $ (not L, not U, not N) | SCENARIO 16: None */ 
+  // ** PASSWORD SELECTION SCENARIOS ** //
 
-    // SCENARIO 1: L=T, U=T, N=T, $=T
+    /* PASSWORD SELECTION LOGIC
+    With a for loop, iterating pwLength times...
+    VARIABLES:  pwLower   |   pwUpper   |   pwNum   |   pwSpecial
+    Case 1:     TRUE      |   TRUE      |   TRUE    |   TRUE
+    Case 2:     TRUE      |   TRUE      |   FALSE   |   FALSE
+    Case 3:     TRUE      |   TRUE      |   FALSE   |   TRUE
+    Case 4:     TRUE      |   TRUE      |   TRUE    |   FALSE
+    Case 5:     TRUE      |   FALSE     |   TRUE    |   TRUE
+    Case 6:     TRUE      |   FALSE     |   FALSE   |   FALSE
+    Case 7:     TRUE      |   FALSE     |   FALSE   |   TRUE
+    Case 8:     TRUE      |   FALSE     |   TRUE    |   FALSE
+    Case 9:     FALSE     |   TRUE      |   TRUE    |   TRUE
+    Case 10:    FALSE     |   TRUE      |   FALSE   |   FALSE
+    Case 11:    FALSE     |   TRUE      |   FALSE   |   TRUE
+    Case 12:    FALSE     |   TRUE      |   TRUE    |   FALSE
+    Case 13:    FALSE     |   FALSE     |   TRUE    |   TRUE
+    Case 14:    FALSE     |   FALSE     |   TRUE    |   FALSE
+    Case 15:    FALSE     |   FALSE     |   FALSE   |   TRUE
+    Case 16:    FALSE     |   FALSE     |   FALSE   |   FALSE // ERROR HANDLE: MUST SELECT ONE OF THE CRITERIA
+    */
+
+    /* ---EMBEDDED FUNCTIONS--- */
+    
+    // SCENARIO 1: lowercase=T, uppercase=T, numbers=T, special characters=T
     if (pwLower == true && pwUpper == true && pwNum == true && pwSpecial == true) {
       console.log("Case 1: Lowercase, Uppercase, Numbers, & Special Characters.");
       let pwArray = [0];  // Set empty array to hold random generated characters
