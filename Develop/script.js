@@ -112,6 +112,7 @@ function generatePassword() {
     function generateLower() {
       // set a var "lRandom" to whatever letter is in the randomly generated index position within the arrLetters array
       let lRandom = arrLetters[Math.floor(Math.random() * arrLetters.length)];
+      console.log("");
       console.log("lRandom: " + lRandom);
       // then return that randomly generated letter
       return lRandom;
@@ -121,6 +122,7 @@ function generatePassword() {
     function generateUpper() {
       // set a var "uRandom" to whatever letter is in the randomly generated index position within arrLetters array, and CAPITALIZE it
       let uRandom = arrLetters[Math.floor(Math.random() * arrLetters.length)].toUpperCase();
+      console.log("");
       console.log("uRandom: " + uRandom);
       // then return that randomly generated letter
       return uRandom;
@@ -130,6 +132,7 @@ function generatePassword() {
     function generateNumber() {
       // set a var "nRandom" to a randomly generated number between 0-9
       let nRandom = Math.floor(Math.random() * 10);
+      console.log("");
       console.log("nRandom: " + nRandom);
       // then return that randomly generated number
       return nRandom;
@@ -139,6 +142,7 @@ function generatePassword() {
     function generateSpecial() {
       // set a var "sRandom" to whatever special character is the randomly generated index position with the arrSpecial array
       let sRandom = arrSpecial[Math.floor(Math.random() * arrSpecial.length)];
+      console.log("");
       console.log("sRandom: " + sRandom);
       // then return that randomly generated special character
       return sRandom;
@@ -178,10 +182,12 @@ function generatePassword() {
         // ... Log a message to the console for troubleshooting
         console.log("No match.")
       }
+      console.log("");
       console.log("Character " + (i+1) + ": " + pwArray[i]);
     }
     // Join all the characters in the pwArray without a separator, and assign the final password string to a new var called "pwResult"
     let pwResult = pwArray.join("");
+    console.log("");
     console.log("Final Password: " + pwResult);
     // Finally return the pwResult variable holding the final password string of randomly generated characters to the writePassword() function
     return pwResult;      
