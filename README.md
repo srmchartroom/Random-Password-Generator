@@ -30,3 +30,7 @@ Javascript-based random password generator that takes password parameters and pr
   -  If the user selects less variety in character types, the percent-chance of character type increases.  For example, if a user elected to include just numbers and lowercase letters for their password. Instead of 27% (or approximately 10 out of 36) chance of selection for numbers in an array with letters, this method would provide both the numbers character type and letters character type equal chance of selection: 50%.
 
   - Note that by it's very essence, randomness also means that a password that has elected use of the four types described *could* still return a password with just numbers, or just lowercase letters.  But, this method of leveling the chances of character type selection  prior to random selection of the character of the selected type ensures a far fairer representative chance of diversity in the characters selected when the user elects greater diversity of character types to include. 
+
+## Reviewing the Deployed Application
+
+-  You can review the deployed application at [https://srmchartroom.github.io/Random-Password-Generator/Develop/index.html](https://srmchartroom.github.io/Random-Password-Generator/Develop/index.html).
